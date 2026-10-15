@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sakshi Modi — Interactive Charts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <!-- Header hidden for now — remove the hidden attribute to bring it back -->
+  <header class="site-header" hidden>
+    <div class="header-inner">
+
+      <a href="../index.html" class="back-btn" id="backBtn" aria-label="Back to main portfolio">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5" /><path d="M12 19l-7-7 7-7" /></svg>
+        <span>Back</span>
+      </a>
+
+      <a href="index.html" class="brand">Sakshi Modi</a>
+
+      <!-- Placeholder nav — wire these up to real sections/pages later -->
+      <nav class="header-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="active">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#resume" class="cta-btn">Resume ↗</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="section-tabs" role="tablist" aria-label="Work categories">
+        <button class="tab-btn is-active" role="tab" id="tab-charts" aria-controls="panel-charts" aria-selected="true">Charts</button>
+        <button class="tab-btn" role="tab" id="tab-interactive" aria-controls="panel-interactive" aria-selected="false" tabindex="-1">Interactive</button>
+        <button class="tab-btn" role="tab" id="tab-illustrations" aria-controls="panel-illustrations" aria-selected="false" tabindex="-1">Illustrations</button>
+      </div>
+    </section>
+
+    <!-- ================= CHARTS (static images) ================= -->
+    <section class="grid-section tab-panel" id="panel-charts" role="tabpanel" aria-labelledby="tab-charts">
+      <div class="collage" id="chartsCollage"><!-- populated by script.js --></div>
+    </section>
+
+    <!-- ================= INTERACTIVE CHART GRID ================= -->
+    <section class="grid-section tab-panel" id="panel-interactive" role="tabpanel" aria-labelledby="tab-interactive" hidden>
+      <div class="chart-grid" id="chartGrid"><!-- populated by script.js --></div>
+    </section>
+
+    <!-- ================= ILLUSTRATIONS ================= -->
+    <section class="grid-section tab-panel" id="panel-illustrations" role="tabpanel" aria-labelledby="tab-illustrations" hidden>
+      <div class="collage" id="illustrationsCollage"><!-- populated by script.js --></div>
+    </section>
+  </main>
+
+  <!-- ================= MODAL ================= -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close chart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18" /><path d="M6 6l12 12" /></svg>
+      </button>
+      <div class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <p id="modalMeta"></p>
+      </div>
+      <div class="modal-frame-wrap">
+        <iframe id="modalIframe" title="Interactive chart" loading="eager" scrolling="no"></iframe>
+        <img id="modalImage" alt="" hidden />
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
