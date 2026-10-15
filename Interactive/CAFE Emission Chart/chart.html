@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choke the engine — CAFE Emission Chart</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  </head>
+  <body>
+    <div class="infographic">
+      <h1 class="headline">Choke the engine</h1>
+      <p class="subtitle">Under the Cafe-2 regime, carmakers had to meet a strict emission target of 113 g/km. Cafe-3 is expected to further tighten the screw</p>
+
+     <p class="chart-label" id="chart-label">Delta CO2* emission (in g/km)</p>
+
+      <!-- Legend -->
+      <div class="legend">
+        <span class="legend-item">
+          <span class="legend-dot red"></span>
+          Under limit
+        </span>
+        <span class="legend-item">
+          <span class="legend-dot green"></span>
+          Over limit
+        </span>
+      </div>
+
+       <!-- Toggle buttons -->
+      <div class="toggle-group" role="group" aria-label="Select CAFE regime">
+        <button class="toggle-btn active" id="btn-cafe2" data-chart="cafe2">Under Cafe-2</button>
+        <button class="toggle-btn" id="btn-cafe3" data-chart="cafe3">Under Cafe-3 (expected)</button>
+      </div>
+
+      
+      <div class="chart-wrapper">
+        <canvas id="scatterChart"></canvas>
+      </div>
+       <!-- Custom tooltip -->
+        <div id="chartjs-tooltip"></div>
+      <!-- Mobile hint — only shown on small screens -->
+      <p class="footnote">*Delta CO2 refers to the difference between the government-mandated target and the carmakers' average fleet emission</p>
+      <p class="mobile-hint">Tap a data point for details</p>
+
+     
+
+      <div class="footer">
+        <div class="footer-logo">
+          <img src="../Indigo chart/the ken.png" alt="The Ken" class="logo-img" />
+        </div>
+        <div class="footer-credit">Graphic by Sakshi M, 03 Apr '26</div>
+        <div class="footer-source">Source: Jato Dynamics</div>
+      </div>
+    </div>
+
+    <script src="chart.js"></script>
+  </body>
+</html>

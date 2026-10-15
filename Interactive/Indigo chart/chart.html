@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IndiGo — Post-booking bill</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  </head>
+  <body>
+    <div class="infographic">
+      <h1 class="headline">Post-booking bill</h1>
+      <p class="subtitle">Indigo's ancillary revenue—money made from cancellations, date changes, food and baggage services—is not trivial.</p>
+
+      <p class="chart-label">Ancillary revenue per passenger (in Rs)</p>
+
+      <div class="chart-wrapper">
+        <canvas id="ancillaryChart"></canvas>
+      </div>
+
+      <div id="chartjs-tooltip"></div>
+
+      <div class="footer">
+        <div class="footer-logo">
+          <img src="the ken.png" alt="The Ken" class="logo-img" />
+        </div>
+        <div class="footer-credit">Graphic by Sakshi M, 25 Mar '26</div>
+        <div class="footer-source">Source: Indigo Airlines annual reports</div>
+      </div>
+    </div>
+
+    <script src="chart.js"></script>
+  </body>
+</html>

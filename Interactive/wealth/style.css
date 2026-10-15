@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  padding: 14px;
+}
+
+.chart-wrapper {
+  width: 100%;
+  max-width: 720px;
+}
+
+.chart-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.chart-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.hotspot {
+  position: absolute;
+  top: 22.27%;
+  height: 3.27%;
+  width: 8.571%;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.hotspot:hover {
+  background-color: rgba(60, 140, 190, 0.12);
+}
+
+.hotspot:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(60, 140, 190, 0.6);
+}
+
+#btn-1lakh  { left: 35.214%; }
+#btn-10lakh { left: 45.714%; }
+#btn-1crore { left: 56.214%; }

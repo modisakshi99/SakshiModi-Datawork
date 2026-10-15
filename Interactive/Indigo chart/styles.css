@@ -1,0 +1,252 @@
+/* ── Ken Design System — Font Declarations ── */
+
+@font-face {
+  font-family: "Jazmin Alt";
+  src: url("./FONTS/JazminAlt-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT America Light";
+  src: url("./FONTS/GT-America-Standard-Light.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT America Extended";
+  src: url("./FONTS/GTAmericaExtended-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Page ── */
+body {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* min-height: 100vh; */
+  padding: clamp(16px, 3vw, 40px) clamp(12px, 2vw, 20px);
+  font-family: "GT America Light", sans-serif;
+}
+
+/* ── Infographic canvas — fluid up to 1400px ── */
+.infographic {
+  background: #F7F2F2;
+  width: 100%;
+  max-width: 1400px;
+  padding: clamp(24px, 3.4vw, 48px) clamp(20px, 4vw, 56px) clamp(16px, 2vw, 28px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Headline — Jazmin Alt Bold, 60px ── */
+.headline {
+  font-family: "Jazmin Alt", serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-align: center;
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  margin-bottom: clamp(8px, 1vw, 14px);
+}
+
+/* ── Subtitle — GT America Light, 20px ── */
+.subtitle {
+  font-family: "GT America Light", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #555555;
+  text-align: center;
+  line-height: 1.5;
+  max-width: min(72%, 900px);
+  margin: 0 auto clamp(20px, 2.4vw, 32px);
+}
+
+/* ── Chart section label — GT America Extended Thin, 20px ── */
+.chart-label {
+  font-family: "GT America Extended", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  color: #555555;
+  text-align: center;
+  /* margin-bottom: clamp(12px, 1.3vw, 18px); */
+  letter-spacing: 0.02em;
+}
+
+/* ── Chart canvas wrapper ── */
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 36vw, 520px);
+}
+
+/* ── Footer — logo | credit | source ── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: clamp(20px, 2vw, 32px); */
+  gap: 12px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: clamp(14px, 1.3vw, 18px);
+  width: auto;
+  display: block;
+}
+
+.footer-credit,
+.footer-source {
+  font-family: "GT America Light", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #888888;
+}
+
+/* ── Custom HTML tooltip ── */
+#chartjs-tooltip {
+  position: fixed;
+  background: #FFFFFF;
+  border: 1px solid #D5D0C8;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-family: "GT America Light", sans-serif;
+  font-size: clamp(12px, 0.9vw, 14px);
+  color: #111111;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 200;
+  transform: translate(-50%, calc(-100% - 14px));
+}
+
+#chartjs-tooltip.visible {
+  opacity: 1;
+}
+
+#chartjs-tooltip .tt-year {
+  font-weight: 700;
+  font-size: clamp(13px, 1vw, 15px);
+  color: #1A1A1A;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+#chartjs-tooltip .tt-row {
+  line-height: 1.75;
+  color: #555555;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+#chartjs-tooltip .tt-label {
+  font-weight: 400;
+  color: #1A1A1A;
+}
+
+#chartjs-tooltip .tt-value {
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+#chartjs-tooltip .tt-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .subtitle {
+    max-width: 95%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+  
+}
+@media (max-width: 800px) {
+
+  body{
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .infographic{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    height: 800px;
+    width: 100%;
+    max-width: 100% !important;
+  }
+  .headline {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .chart-label {
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+  }
+  .logo-img {
+    height: 13px;
+  }
+
+  .footer {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .footnote {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+
+  .footer-credit, .footer-source {
+    font-size: 10px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,323 @@
+/* ── Ken Design System — Font Declarations ── */
+
+@font-face {
+  font-family: "Jazmin Alt";
+  src: url("../Indigo chart/FONTS/JazminAlt-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT America Light";
+  src: url("../Indigo chart/FONTS/GT-America-Standard-Light.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT America Extended";
+  src: url("../Indigo chart/FONTS/GTAmericaExtended-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Page ── */
+body {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(16px, 3vw, 40px) clamp(12px, 2vw, 20px);
+  font-family: "GT America Light", sans-serif;
+}
+
+/* ── Infographic canvas ── */
+.infographic {
+  background: #F7F2F2;
+  width: 100%;
+  max-width: 1400px;
+  padding: clamp(24px, 3.4vw, 48px) clamp(20px, 4vw, 56px) clamp(16px, 2vw, 28px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Headline ── */
+.headline {
+  font-family: "Jazmin Alt", serif;
+  font-size: clamp(30px, 5vw, 60px);
+  font-weight: 700;
+  color: #1A1A1A;
+  text-align: center;
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  margin-bottom: clamp(8px, 1vw, 14px);
+}
+
+/* ── Subtitle ── */
+.subtitle {
+  font-family: "GT America Light", sans-serif;
+  font-size: clamp(13px, 1.4vw, 20px);
+  font-weight: 400;
+  color: #555555;
+  text-align: center;
+  line-height: 1.5;
+  max-width: min(78%, 920px);
+  margin: 0 auto clamp(16px, 2vw, 28px);
+}
+
+/* ── Toggle group ── */
+.toggle-group {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: 0 auto ;
+  border: 1.5px solid #CCCCCC;
+  border-radius: 4px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.toggle-btn {
+  font-family: "GT America Light", sans-serif;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 400;
+  color: #555555;
+  background: #F7F2F2;
+  border: none;
+  padding: clamp(7px, 0.8vw, 11px) clamp(14px, 2vw, 28px);
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+  letter-spacing: 0.01em;
+  outline: none;
+  white-space: nowrap;
+}
+
+.toggle-btn:not(:last-child) {
+  border-right: 1.5px solid #CCCCCC;
+}
+
+.toggle-btn.active {
+  background: #1A1A1A;
+  color: #F7F2F2;
+  font-weight: 700;
+}
+
+.toggle-btn:hover:not(.active) {
+  background: #EDE8E0;
+}
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 32px);
+  margin-bottom: clamp(10px, 1.2vw, 16px);
+  font-family: "GT America Light", sans-serif;
+  font-size: clamp(13px, 0.95vw, 14px);
+  color: #555555;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-dot.red  { background: #F6CB50; }
+.legend-dot.green { background: #925CB6; }
+
+/* ── Chart section label ── */
+.chart-label {
+  font-family: "GT America Extended", sans-serif;
+  font-size: clamp(13px, 1.1vw, 18px);
+  font-weight: 100;
+  color: #555555;
+  text-align: center;
+  margin-bottom: clamp(8px, 0.8vw, 12px);
+  letter-spacing: 0.02em;
+}
+
+/* ── Chart canvas wrapper ── */
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  /* 4:3 aspect ratio maintained via padding-bottom trick */
+  aspect-ratio: 4 / 3;
+  min-height: 260px;
+  max-height: 560px;
+}
+
+.chart-wrapper canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: clamp(16px, 2vw, 28px);
+  gap: 12px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: clamp(14px, 1.3vw, 18px);
+  width: auto;
+  display: block;
+}
+
+.footer-credit,
+.footer-source {
+  font-family: "GT America Light", sans-serif;
+  font-size: clamp(10px, 1vw, 16px);
+  font-weight: 400;
+  color: #888888;
+}
+
+/* ── Custom HTML Tooltip ── */
+#chartjs-tooltip {
+  position: absolute !important;
+  background: #FFFFFF;
+  border: 1px solid #D5D0C8;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-family: "GT America Light", sans-serif;
+  font-size: clamp(12px, 0.9vw, 14px);
+  color: #111111;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 200;
+  transform: translate(-50%, calc(10% - 14px)); 
+}
+
+#chartjs-tooltip.visible {
+  opacity: 1;
+}
+
+#chartjs-tooltip .tt-company {
+  font-weight: 700;
+  font-size: clamp(13px, 1vw, 15px);
+  color: #1A1A1A;
+  margin-bottom: 7px;
+  letter-spacing: 0.01em;
+}
+
+#chartjs-tooltip .tt-row {
+  line-height: 1.85;
+  color: #555555;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+#chartjs-tooltip .tt-label {
+  font-weight: 400;
+  color: #888888;
+}
+
+#chartjs-tooltip .tt-value {
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+/* ── Mobile hint (hidden on desktop) ── */
+.mobile-hint {
+  display: none;
+}
+.footnote {
+  font-family: "GT America Light", sans-serif;
+  font-size: clamp(11px, 1.1vw, 16px);
+  font-weight: 400;
+  color: #999999;
+  text-align: center;
+
+}
+
+/* ── Mobile ── */
+@media (max-width: 800px) {
+  body {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .infographic {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    padding-bottom: 12px !important;
+    width: 100%;
+    max-width: 100% !important;
+  }
+
+  .subtitle {
+    max-width: 98%;
+  }
+
+  .mobile-hint {
+    display: block;
+    font-family: "GT America Light", sans-serif;
+    font-size: 11px;
+    color: #999999;
+    text-align: center;
+    margin-top: 10px;
+   
+  }
+
+ .logo-img {
+    height: 13px;
+  }
+
+  .footer {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .footnote {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+
+  .footer-credit, .footer-source {
+    font-size: 11px;
+    text-align: center;
+  }
+  #chartjs-tooltip {
+  position: fixed ;
+  transform: translate(-50%, calc(-100% - 14px));
+ }
+.toggle-btn {
+  font-family: "GT America Light", sans-serif;
+  font-size: clamp(12px, 1vw, 14px);
+} 
+
+}

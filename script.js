@@ -15,7 +15,7 @@ const CHARTS = [
   {
     title: "Choke the engine",
     category: "Automotive · Bar chart",
-    path: "../Charts folder 1/CAFE Emission Chart/chart.html",
+    path: "./interactive/CAFE Emission Chart/chart.html",
     thumbContentHeight: 1050,
     thumbZoom: 1.25,
     thumbFocusY: 0.6,
@@ -23,7 +23,7 @@ const CHARTS = [
   {
     title: "Control room",
     category: "Media · Sankey diagram",
-    path: "../Charts folder 1/Control room_sankey/index.html",
+    path: "./interactive/Control room_sankey/index.html",
     thumbContentHeight: 876,
     thumbZoom: 1.2,
     thumbFocusY: 0.55,
@@ -31,7 +31,7 @@ const CHARTS = [
   {
     title: "Post-booking bill",
     category: "Aviation · Bar chart",
-    path: "../Charts folder 1/Indigo chart/chart.html",
+    path: "./interactive/Indigo chart/chart.html",
     thumbContentHeight: 878,
     thumbZoom: 1.25,
     thumbFocusY: 0.58,
@@ -39,7 +39,7 @@ const CHARTS = [
   {
     title: "Bolly bling",
     category: "Entertainment · Interactive grid",
-    path: "../Charts folder 1/Jio Studios/index.html",
+    path: "./interactive/Jio Studios/index.html",
     thumbContentHeight: 875,
     thumbZoom: 1.3,
     thumbFocusY: 0.56,
@@ -47,7 +47,7 @@ const CHARTS = [
   {
     title: "Breaks Undersea",
     category: "Infrastructure · Annotated map",
-    path: "../Charts folder 1/Undersea/undersea.html",
+    path: "./interactive/Undersea/undersea.html",
     thumbContentHeight: 902,
     thumbZoom: 1.1,
     thumbFocusY: 0.5,
@@ -55,7 +55,7 @@ const CHARTS = [
   {
     title: "Choosing right",
     category: "Personal finance · Interactive infographic",
-    path: "../Charts folder 1/wealth/index.html",
+    path: "./interactive/wealth/index.html",
     thumbContentHeight: 626,
     thumbZoom: 1.15,
     thumbFocusY: 0.5,
@@ -63,7 +63,7 @@ const CHARTS = [
   {
     title: "Smuggling routes",
     category: "Drones · Interactive map",
-    path: "../Chart folder 2/DJI/index.html",
+    path: "./interactive/DJI/index.html",
     thumbContentHeight: 1196,
     thumbZoom: 1.1,
     thumbFocusY: 0.5,
@@ -71,7 +71,7 @@ const CHARTS = [
   {
     title: "State of affairs",
     category: "Startups · Funding timeline",
-    path: "../Chart folder 2/Udaan/index.html",
+    path: "./interactive/Udaan/index.html",
     thumbContentHeight: 639,
     thumbZoom: 1.1,
     thumbFocusY: 0.5,
