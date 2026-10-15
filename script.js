@@ -15,7 +15,7 @@ const CHARTS = [
   {
     title: "Choke the engine",
     category: "Automotive · Bar chart",
-    path: "./interactive/CAFE Emission Chart/chart.html",
+    path: "../interactive/CAFE Emission Chart/chart.html",
     thumbContentHeight: 1050,
     thumbZoom: 1.25,
     thumbFocusY: 0.6,
